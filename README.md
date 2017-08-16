@@ -1,6 +1,4 @@
-#**Traffic Sign Recognition** 
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
+# **Traffic Sign Recognition** 
 
 ---
 
@@ -33,13 +31,13 @@ The goals / steps of this project are the following:
 
 
 ---
-###Writeup / README
+### Writeup / README
 
 You're reading it! and here is a link to my [project code](https://github.com/dileepbapat/SelfDriveCar-DetectTrafficSign/blob/master/Traffic_Sign_Classifier.ipynb)
 
-###Data Set Summary & Exploration
+### Data Set Summary & Exploration
 
-####1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+#### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
@@ -50,7 +48,7 @@ signs data set:
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
 
-####2. Exploratory visualization of the dataset.
+#### 2. Exploratory visualization of the dataset.
 
 First, lets see whats the spread of dataset by target labels i.e., traffic sign.
 
@@ -67,9 +65,9 @@ Just to confirm test set is also similar we can plot similar graph for test.
 
 ![Traffic sign type spread on test data][image3]
 
-###Design and Test a Model Architecture
+### Design and Test a Model Architecture
 
-####1. Pre-processing
+#### 1. Pre-processing
 As a first step, I decided to convert the images to gray-scale because shapes in images are enough to distinguish the sign, color is not adding much to it. 
 
 Here is an example of a traffic sign image before and after gray-scaling.
@@ -82,7 +80,7 @@ As a last step, I normalized the image data because keeping the input in range o
 For now I am not augmenting data, after verification of results if its still low, I will generate more images to balance the class count in training images.
      
 
-####2. Network
+#### 2. Network
 
 My final model consisted of the following layers:
 
@@ -110,7 +108,7 @@ My final model consisted of the following layers:
  
 
 
-####3. Training
+#### 3. Training
 
 * I started with basic LeNet model with default parameters suggested, learning rate of 0.001 and batch size of 128. 
 * As accuracy needed was more than 93% and LeNet was not getting accuracy little below it, I added an additional layer
@@ -125,7 +123,7 @@ My final model consisted of the following layers:
     * experiment with learning rate,
     * change / add layers.
    
-####4. Iterative development
+#### 4. Iterative development
 
 My final model results were:
 * training set accuracy of 99.95%
@@ -150,9 +148,9 @@ from overfitting as there are not many images in some of classes. adding regular
  accuracy.
  
 
-###Testing the model on new images
+### Testing the model on new images
 
-####1. Download images from internet
+#### 1. Download images from internet
 
 Here are five German traffic signs that I found on the web: (it was resized to 32x32 to match the dataset)
 
@@ -160,7 +158,7 @@ Here are five German traffic signs that I found on the web: (it was resized to 3
 ![alt text][newimage4] ![alt text][newimage5]
 
 
-####2. Prediction on new images
+#### 2. Prediction on new images
 
 Here are the results of the prediction:
 
@@ -181,7 +179,7 @@ train set.
 The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 93.5%
 (as given dataset is only 5 the resolution of difference is 20%)
 
-####3. Prediction confidence
+#### 3. Prediction confidence
 
 The code for making predictions on my final model is located below #Prediction-confidence heading.
 
@@ -206,7 +204,7 @@ Other closest match are General caution and Pedestrians
 ![Probability of Children crossing sign][probability_distribution]
 
 ### Visualizing internal activation at hidden layers
-####1. Feature map at first convolution layer
+#### 1. Feature map at first convolution layer
 Below is activation values visualized as image when new image data was fed.
 
 ![Hidden layer visualization][features] 
